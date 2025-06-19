@@ -1,4 +1,3 @@
-
 import { User, Patient, MedicalStaff, Specialty, WorkShift, WorkSchedule, Appointment, Session } from '@/types';
 
 const STORAGE_KEYS = {
@@ -10,6 +9,16 @@ const STORAGE_KEYS = {
   WORK_SCHEDULES: 'medical_system_work_schedules',
   APPOINTMENTS: 'medical_system_appointments',
   SESSION: 'medical_system_session',
+};
+
+// Generic localStorage functions
+export const saveToLocalStorage = (key: string, data: any): void => {
+  localStorage.setItem(key, JSON.stringify(data));
+};
+
+export const getFromLocalStorage = (key: string): any => {
+  const data = localStorage.getItem(key);
+  return data ? JSON.parse(data) : null;
 };
 
 // Initialize default data

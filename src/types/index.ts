@@ -83,3 +83,6 @@ export interface Session {
   name: string;
   createdAt: string;
 }
+
+// Re-export medical types
+export * from './medical';
